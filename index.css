@@ -10,8 +10,8 @@ html, body {
 .container{
     margin: 1.25em auto 0 auto;
     border: 1px solid gray;
-    height: 34.375em;
-    width: 34.375em;
+    height: fit-content;
+    width: fit-content;
 }
 header{
     display: flex;
@@ -42,8 +42,19 @@ header button {
     gap: 0;
 }
 #color-0,#color-1,#color-2,#color-3,#color-4{
-    width: 100px;
-    height: 100px;
+    width: 6.875em;
+    height: 25.9375em;
+}
+#color-label-0,#color-label-1,#color-label-2,#color-label-3,#color-label-4{
+    text-align: center;
+}
+.label-container{
+    background-color: #FFFFFF;
+    height: 2.625em;
+    width: 6.875em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .color-container{
     width: 6.875em;

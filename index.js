@@ -16,8 +16,10 @@ function getColor(){
             })
             hexValues.forEach((element, index) => {
                 let colorElement = document.getElementById(`color-${index}`)
+                let colorElementLabel = document.getElementById(`color-label-${index}`)
                 console.log(colorElement)
                 colorElement.style.backgroundColor = element
+                colorElementLabel.innerText = element
             });
         })
 }
