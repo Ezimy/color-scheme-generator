@@ -5,21 +5,21 @@ document.getElementById("color-btn").addEventListener("click", function(){
     console.log(colorScheme)
     render()
 })
-function getColorHTML(){
+async function getColorHTML(){
     let colorHTML = ''
-        fetch(`https://www.thecolorapi.com/scheme?hex=${currentColor}&mode=${colorScheme}&count=5`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            data.colors.forEach(element => {
-                console.log(element.hex.value)
-                colorHTML += `
-                <div class="color-container">
-                    <div id="${element.hex.clean}"></div>
-                    <h1>${element.hex.value}</h1>
-                </div>`
-                document.getElementById(`${element.hex.clean}`).style.background = `${element.hex.value}`
-            })
+        await fetch(`https://www.thecolorapi.com/scheme?hex=${currentColor}&mode=${colorScheme}&count=5`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                data.colors.forEach(element => {
+                    console.log(element.hex.value)
+                    colorHTML += `
+                    <div class="color-container">
+                        <div id="${element.hex.clean}"></div>
+                        <h1>${element.hex.value}</h1>
+                    </div>`
+                    // document.getElementById(`${element.hex.clean}`).style.backgroundColor = `${element.hex.value}`
+                })
         })
     return colorHTML
 }
