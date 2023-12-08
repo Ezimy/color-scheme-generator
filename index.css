@@ -1,4 +1,39 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: lightgray;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    margin: 1.25em auto 0 auto;
+    border: 1px solid gray;
+    height: 34.375em;
+    width: 34.375em;
+}
+header{
+    display: flex;
+    width: 100%;
+    padding: 1.25em 0.625em;
+    gap: 1em;
+    background-color: #FFFFFF;
+}
+#colorpicker {
+    height: 2.625em; /* Adjusted to 42 pixels in em units */
+    width: 3.1875em;
+}
+
+select {
+    height: 2.625em; /* Adjusted to 42 pixels in em units */
+    width: 19.5em;
+    font-size: 1rem;
+}
+
+header button {
+    padding: 1em 0.6875em;
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: pointer;
 }
