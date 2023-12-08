@@ -39,7 +39,11 @@ header button {
 }
 #color-grid{
     display: flex;
-    justify-content: space-evenly;
+    gap: 0;
+}
+#color-0,#color-1,#color-2,#color-3,#color-4{
+    width: 100px;
+    height: 100px;
 }
 .color-container{
     width: 6.875em;

@@ -1,28 +1,23 @@
-const currentColor = document.getElementById("colorpicker").value.slice(1)
-const colorScheme = document.getElementById("color-select").value
+const currentColor = document.getElementById("colorpicker")
+const colorScheme = document.getElementById("color-select")
 document.getElementById("color-btn").addEventListener("click", function(){
     console.log(currentColor)
     console.log(colorScheme)
-    render()
+    getColor()
 })
-async function getColorHTML(){
-    let colorHTML = ''
-        await fetch(`https://www.thecolorapi.com/scheme?hex=${currentColor}&mode=${colorScheme}&count=5`)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                data.colors.forEach(element => {
-                    console.log(element.hex.value)
-                    colorHTML += `
-                    <div class="color-container">
-                        <div id="${element.hex.clean}"></div>
-                        <h1>${element.hex.value}</h1>
-                    </div>`
-                    // document.getElementById(`${element.hex.clean}`).style.backgroundColor = `${element.hex.value}`
-                })
+function getColor(){
+    let color = currentColor.value.slice(1)
+	let colorMode = colorScheme.value
+    fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${colorMode}&count=5`)
+        .then(res => res.json())
+        .then(data => {
+            let hexValues = data.colors.map((hex)=> {
+                return hex.hex.value
+            })
+            hexValues.forEach((element, index) => {
+                let colorElement = document.getElementById(`color-${index}`)
+                console.log(colorElement)
+                colorElement.style.backgroundColor = element
+            });
         })
-    return colorHTML
-}
-function render(){
-    document.getElementById("color-grid").innerHTML = getColorHTML()
 }
