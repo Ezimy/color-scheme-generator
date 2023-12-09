@@ -1,10 +1,25 @@
 const currentColor = document.getElementById("colorpicker")
 const colorScheme = document.getElementById("color-select")
-document.getElementById("color-btn").addEventListener("click", function(){
-    console.log(currentColor)
-    console.log(colorScheme)
-    getColor()
-})
+getColor()
+document.addEventListener('click', function(e){
+        if(e.target.id === "color-btn"){
+            document.getElementById("color-btn").addEventListener("click", function(){
+                getColor()
+            })
+        }
+        if(e.target.classList.contains("label")){
+        copyTextToClipboard(e.target.innerText)
+        }
+    })
+    function copyTextToClipboard(text) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                console.log('Text copied to clipboard:', text);
+            })
+            .catch(err => {
+                console.error('Unable to copy text to clipboard', err);
+            });
+    }
 function getColor(){
     let color = currentColor.value.slice(1)
 	let colorMode = colorScheme.value

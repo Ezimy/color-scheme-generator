@@ -9,7 +9,6 @@ html, body {
 }
 .container{
     margin: 1.25em auto 0 auto;
-    border: 1px solid gray;
     height: fit-content;
     width: fit-content;
 }
@@ -50,7 +49,7 @@ header button {
 }
 .label-container{
     background-color: #FFFFFF;
-    height: 2.625em;
+    height: 2.875em;
     width: 6.875em;
     display: flex;
     justify-content: center;
@@ -59,4 +58,7 @@ header button {
 .color-container{
     width: 6.875em;
     font-size: 0.7rem;
+}
+.label{
+    cursor: pointer;
 }
