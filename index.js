@@ -8,17 +8,12 @@ document.addEventListener('click', function(e){
             })
         }
         if(e.target.classList.contains("label")){
-        copyTextToClipboard(e.target.innerText)
+            copyTextToClipboard(e.target.innerText)
+            console.log("Copied to clipboard")
         }
     })
     function copyTextToClipboard(text) {
         navigator.clipboard.writeText(text)
-            .then(() => {
-                console.log('Text copied to clipboard:', text);
-            })
-            .catch(err => {
-                console.error('Unable to copy text to clipboard', err);
-            });
     }
 function getColor(){
     let color = currentColor.value.slice(1)
