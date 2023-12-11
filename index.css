@@ -2,6 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: lightgray;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
 *{
     box-sizing: border-box;
@@ -25,9 +27,13 @@ header{
 }
 
 select {
+    font-weight: 400;
     height: 2.625em; /* Adjusted to 42 pixels in em units */
     width: 19.5em;
     font-size: 1rem;
+    border-radius: 0.5em;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
 }
 
 header button {
@@ -35,6 +41,9 @@ header button {
     font-size: 0.75rem;
     line-height: 1;
     cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.25em;
 }
 #color-grid{
     display: flex;

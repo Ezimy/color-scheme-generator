@@ -9,7 +9,7 @@ document.addEventListener('click', function(e){
         }
         if(e.target.classList.contains("label")){
             copyTextToClipboard(e.target.innerText)
-            console.log("Copied to clipboard")
+            alert("Copied To Clipboard")
         }
     })
     function copyTextToClipboard(text) {
